@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <form autocomplete="off" action="/create" method="GET">
+   
+      <div class="container mt-5 p-2 ">
+          <div class="input-group mb-3 "  style="height: 100px;">
+      
+            <input type="text" name="Note" class="form-control rounded-start-pill" placeholder="Enter your title" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-secondary rounded-end-circle" type="submit" id="button-addon2">Add Task</button>
+    
+          </div>
+      <div>   
+    </form>
+ <div class="container  p-1 "  >
+     <%  for(let i=0;i<ans.length;i++){ %>
+     <form autocomplete="off"    action="/crud/<%= ans[i].id;  %>"  method="POST"> 
+         <div class="input-group bg-body-tertiary py-2"  >
+             <input type="text" class="form-control m-2"  name="description" style="height:50px;" aria-label="Recipient's username with two button addons" value="<%= ans[i].Description;  %>">
+             <button class="btn btn-primary m-2"style="width:80px;" type="Submit" name="Edit" value="Edit">Edit</button>
+             <button class="btn btn-danger m-2" type="Submit" name="Delete" value="Delete">Delete</button>
+         </div>
+     </form>
+
+     <%  }; %>
+ <div>   
+        
+     
+</body>
+</html>
